@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
+import Welcome from "./components/Welcome";
 
-const Container = () => {
-  return <h1>This h1 is from React</h1>;
-};
-
-ReactDOM.render(<Container />, document.getElementById("react"));
+ReactDOM.render(
+  <Welcome title="Webpack Warmup" />,
+  document.getElementById("react")
+);
