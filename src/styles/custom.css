@@ -3,3 +3,8 @@ h2,
 h3 {
   color: #a01c1c;
 }
+
+.logo-bg {
+  background-image: url("../img/m_logo.png");
+  width: 40em;
+}

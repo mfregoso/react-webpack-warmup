@@ -7,6 +7,7 @@ class Welcome extends Component {
       <div>
         <img src={MLogo} />
         <h3>Welcome to {this.props.title || "App Title"}!</h3>
+        <div className="logo-bg" />
       </div>
     );
   }
