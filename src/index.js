@@ -1,10 +1,8 @@
-const msgs = [
-  "hello from 1node",
-  "hello from 2node",
-  "hello from 3node",
-  "hello from webpack watch"
-];
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 
-for (let msg of msgs) {
-  console.log(msg);
-}
+const Container = () => {
+  return <h1>This h1 is from React</h1>;
+};
+
+ReactDOM.render(<Container />, document.getElementById("react"));
