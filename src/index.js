@@ -4,6 +4,6 @@ import Welcome from "./components/Welcome";
 import "./styles/default.scss";
 
 ReactDOM.render(
-  <Welcome title="Webpack Warmup" />,
+  <Welcome title="Webpack Dev Warmup" />,
   document.getElementById("react")
 );
