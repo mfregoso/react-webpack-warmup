@@ -1,16 +1,37 @@
 import React, { Component } from "react";
-import MLogo from "../img/m_logo.png";
+import People from "./People";
+import Filters from "./InputFilters";
+import * as Actions from "../actions/index";
+import { connect } from "react-redux";
 
 class Welcome extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div>
-        <img src={MLogo} />
-        <h3>Welcome to {this.props.title || "App Title"}!</h3>
-        <div className="logo-bg" />
+        <h3 className="title">Redux Thunk Search</h3>
+        <button onClick={() => this.props.refreshPeople()}>Refresh</button>
+        <p />
+        <div style={{ width: "100%" }}>
+          <div style={{ width: "35%", float: "left" }}>
+            <Filters />
+          </div>
+          <div style={{ width: "60%", float: "right" }}><People /></div>
+        </div>
       </div>
     );
   }
 }
 
-export default Welcome;
+const mapDispatchToProps = dispatch => {
+  return {
+    refreshPeople: () => {
+      dispatch(Actions.refreshPeople());
+    }
+  }
+};
+
+export default connect(null, mapDispatchToProps)(Welcome);

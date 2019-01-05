@@ -1,9 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { Store } from "./store/store"
 import Welcome from "./components/Welcome";
-import "./styles/default.scss";
+import "./styles/people.less";
 
 ReactDOM.render(
-  <Welcome title="Webpack Dev Warmup" />,
+  <Provider store={Store}>
+    <Welcome title="App" />
+  </Provider>,
   document.getElementById("react")
 );
