@@ -45,7 +45,6 @@ export const refreshPeople = () => {
 
 export const updateResultsPage = (people) => {
     return (dispatch) => {
-        //const state = getState(); // grabs a copy of current redux state
         dispatch({type: "UPDATE_PEOPLE", people});
     };
 };
