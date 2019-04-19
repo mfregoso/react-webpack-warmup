@@ -18,6 +18,8 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    git config user.email "mfregoso@users.noreply.github.com" 
+    git config user.name "mfregoso"
     npm install
     npm run deploy -- -r https://$(ghkey)@github.com/mfregoso/react-webpack-warmup.git
   displayName: 'npm install, build and deploy'
