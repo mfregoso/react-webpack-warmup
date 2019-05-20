@@ -49,6 +49,6 @@ export const Store = createStore(
   )
 );
 
-export const intitialResultsState = {
-  ...Store.getState()
-};
+// export const intitialResultsState = {
+//   ...Store.getState()
+// };
