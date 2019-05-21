@@ -16,6 +16,8 @@ const initialResults = {
   checkedFilters: defaultCheckedFilters
 };
 
+const inDev = process.env.ENV_NAME === "DEV";
+
 const providePreloadStateMiddleware = store => next => action => {
   next({ ...action, preloadState: initialResults });
 };
@@ -45,7 +47,7 @@ export const Store = createStore(
   initialResults,
   composeEnhancers(
     applyMiddleware(reduxThunk, providePreloadStateMiddleware),
-    //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    inDev ? window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() : applyMiddleware(),
   )
 );
 
