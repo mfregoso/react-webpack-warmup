@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "watch": "webpack --w",
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --open",
     "predeploy": "npm run build",
     "deploy": "gh-pages --silent -d build",
     "test": "echo \"Error: no test specified\" && exit 1"

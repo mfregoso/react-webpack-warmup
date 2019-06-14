@@ -2,30 +2,24 @@ import React from "react";
 import { connect } from "react-redux";
 import * as Actions from "../actions/index";
 
-class Filters extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.renderInput = (name, idx) => {
-            return (
-                <React.Fragment key={idx}>
-                    <input type="checkbox" checked={this.props.checkedFilters[name]}
-                        onChange={() => this.props.updateFilter(name)} />
-                    <label>{name}</label>
-                    <p />
-                </React.Fragment>
-            )
-        }
-    }
-
-    render() {
+const Filters = props => {
+    const renderInput = (name, idx) => {
         return (
-            <div>
-                <h2>Filtered Search</h2>
-                {Object.keys(this.props.checkedFilters).map((name, idx) => this.renderInput(name, idx))}
-            </div>
+            <React.Fragment key={idx}>
+                <input type="checkbox" checked={props.checkedFilters[name]}
+                    onChange={() => props.updateFilter(name)} />
+                <label>{name}</label>
+                <p />
+            </React.Fragment>
         )
     }
+
+    return (
+        <div>
+            <h2>Filtered Search</h2>
+            {Object.keys(props.checkedFilters).map(renderInput)}
+        </div>
+    )
 }
 
 const mapStateToProps = state => {

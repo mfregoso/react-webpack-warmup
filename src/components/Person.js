@@ -1,6 +1,7 @@
 import React from "react";
 
-const Person = ({ dob, gender, location, name, nat, picture, phone, idx }) => {
+const Person = (props) => {
+    const { dob, gender, location, name, nat, picture, phone, idx } = props;
     
     return (
         <div key={idx} style={{ padding: "0.5em" }}>
